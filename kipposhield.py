@@ -55,7 +55,7 @@ def send_log(attempts):
     auth_header = 'credentials={0} nonce=ElWO1arph+Jifqme6eXD8Uj+QTAmijAWxX1msbJzXDM= userid={1}'.format(digest, dshield_userid)
     headers = {'X-ISC-Authorization': auth_header,
               'Content-Type':'text/plain',
-              'Content-Length':len(log_output)}
+              'Content-Length':str(len(log_output))}
     req = requests.request(method ='PUT',
                            url = 'https://secure.dshield.org/api/file/sshlog',
                            headers = headers,
